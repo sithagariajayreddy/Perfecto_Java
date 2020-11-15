@@ -1,0 +1,4 @@
+***ANDROID***
+btn.equal = {\"locator\":\"xpath=//*[@text='=']",\"desc\":\"Equal Button\"}
+
+

@@ -1,0 +1,3 @@
+***IOS***
+btn.equal = {\"locator\":\"name=equals\",\"desc\":\"Equal Button\"}
+

@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Ajay_Project" verbose="0" parallel="tests">
+    <listeners>
+        <listener class-name="com.quantum.listeners.QuantumReportiumListener"/>
+        <listener class-name="com.components.Initializer"/>
+        <listener class-name="com.components.TestFilterListener"/>
+    </listeners>
+
+    <!-- To use actual AppiumDriver classes defined    -->
+    <!-- by driverClass property in env.resources dirs -->
+    <!-- Set driver.name value to perfectoDriver       -->
+    <parameter name="driver.name" value="perfectoDriver"/>
+
+    <test name="IOS_PRO" enabled="true">
+        <parameter name="driver.capabilities.model" value="iPhone.*"></parameter>
+        <parameter name="env.resources" value="src/main/resources/ios"/>
+        <parameter name="environment" value="QA1"/>
+        <parameter name="testdata_sheetname" value="loginSheet"/> 
+        
+        <groups>
+            <run>
+                <include name="@appium"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory"/>
+        </classes>
+    </test>
+</suite>
